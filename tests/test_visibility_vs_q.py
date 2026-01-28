@@ -201,14 +201,35 @@ def run_visibility_test(q_values: List[float], shots: int = 1000,
             use_hardware = False
         else:
             try:
+                import os
+                from azure.quantum import Workspace
                 from azure.quantum.qiskit import AzureQuantumProvider
-                # Connect to Azure Quantum
-                provider = AzureQuantumProvider(
-                    resource_id="/subscriptions/your-subscription/resourceGroups/your-rg/providers/Microsoft.Quantum/Workspaces/TOF",
-                    location="eastus"
-                )
-                backend = provider.get_backend('ionq.qpu.aria-1')
-                print(f"Connected to backend: {backend.name()}")
+
+                # Get workspace config from environment or use defaults
+                resource_id = os.environ.get('AZURE_QUANTUM_RESOURCE_ID')
+                location = os.environ.get('AZURE_QUANTUM_LOCATION', 'eastus')
+
+                if resource_id:
+                    # Use explicit resource ID from environment
+                    workspace = Workspace(resource_id=resource_id, location=location)
+                else:
+                    # Try to use default workspace (requires az login)
+                    # This will use the workspace from your Azure CLI context
+                    workspace = Workspace.from_connection_string(
+                        os.environ.get('AZURE_QUANTUM_CONNECTION_STRING', '')
+                    ) if os.environ.get('AZURE_QUANTUM_CONNECTION_STRING') else None
+
+                    if workspace is None:
+                        print("NOTE: Set AZURE_QUANTUM_RESOURCE_ID environment variable")
+                        print("      or AZURE_QUANTUM_CONNECTION_STRING for hardware access.")
+                        print("Falling back to local simulation...")
+                        use_hardware = False
+
+                if use_hardware and workspace:
+                    provider = AzureQuantumProvider(workspace=workspace)
+                    backend = provider.get_backend('ionq.qpu.aria-1')
+                    print(f"Connected to backend: {backend.name()}")
+
             except Exception as e:
                 print(f"ERROR: Could not connect to Azure Quantum: {e}")
                 print("Falling back to local simulation...")
