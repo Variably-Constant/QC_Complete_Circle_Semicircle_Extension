@@ -29,10 +29,10 @@
   "access_right": "open",
   "language": "eng",
   "doi": "10.5281/zenodo.18451570",
-  "notes": "Extension of the semicircle constraint to the complete circle with circumference 2π. Proves arc length = π via Fisher metric. Conjectures CPT correspondence for the conjugate sector and the fundamental emergence of π from probability geometry. Code available at https://github.com/Variably-Constant/qc-complete-circle",
+  "notes": "Extension of the semicircle constraint to the complete circle with circumference 2π. Proves arc length = π via Fisher metric. Conjectures CPT correspondence for the conjugate sector and the fundamental emergence of π from probability geometry. Code available at https://github.com/Variably-Constant/QC_Complete_Circle_Semicircle_Extension",
   "related_identifiers": [
     {
-      "identifier": "https://github.com/Variably-Constant/qc-complete-circle",
+      "identifier": "https://github.com/Variably-Constant/QC_Complete_Circle_Semicircle_Extension",
       "relation": "isSupplementedBy",
       "resource_type": "software",
       "scheme": "url"
