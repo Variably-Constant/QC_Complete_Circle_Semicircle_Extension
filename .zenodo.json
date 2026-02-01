@@ -1,0 +1,60 @@
+{
+  "title": "The Complete Circle: Extending the Semicircle Constraint to 2π with Conjectured CPT Correspondence",
+  "description": "We extend the semicircle constraint (q - 1/2)² + C_qc² = 1/4 to the complete circle by including both roots C_qc^(±) = ±√(q(1-q)). We PROVE: (1) the semicircle arc length equals π via the Fisher information metric; (2) the complete circle has information-theoretic circumference 2π; (3) the angular parameterization q(φ), C_qc(φ) covers the full circle for φ ∈ [0, 2π). We CONJECTURE: (4) the negative root C_qc^(-) corresponds to the CPT-conjugate sector; (5) this 'missing π' represents antimatter and time-reversed processes; (6) the value π emerges fundamentally from quantum probability geometry and propagates to circular structures at all scales. The visibility formula V(q) = 2q(1-q) is derived as a testable prediction. This work establishes the mathematical foundation while proposing physical interpretations connecting quantum geometry to particle-antiparticle duality.",
+  "creators": [
+    {
+      "name": "Newton, Mark",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0003-2200-2226"
+    }
+  ],
+  "keywords": [
+    "quantum mechanics",
+    "Fisher information",
+    "information geometry",
+    "CPT symmetry",
+    "antimatter",
+    "pi",
+    "circular geometry",
+    "quantum-classical correlation",
+    "Born rule",
+    "visibility",
+    "Bloch sphere"
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  },
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "language": "eng",
+  "doi": "10.5281/zenodo.18451570",
+  "notes": "Extension of the semicircle constraint to the complete circle with circumference 2π. Proves arc length = π via Fisher metric. Conjectures CPT correspondence for the conjugate sector and the fundamental emergence of π from probability geometry. Code available at https://github.com/Variably-Constant/qc-complete-circle",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Variably-Constant/qc-complete-circle",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.18451496",
+      "relation": "cites",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ],
+  "subjects": [
+    {
+      "term": "Quantum Physics",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh85109469",
+      "scheme": "url"
+    },
+    {
+      "term": "Mathematical Physics",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh85082139",
+      "scheme": "url"
+    }
+  ],
+  "version": "1.0"
+}
